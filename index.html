@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Notion Cover Studio — Free Minimal Notion Cover &amp; Wallpaper Maker</title>
+<meta name="description" content="Make a clean, minimal Notion cover or phone wallpaper in about ten seconds. Pick a preset, type a line, download a sharp PNG. Free, no sign-up, no watermark, no upload." />
+<link rel="canonical" href="https://notion-cover-studio.vercel.app/" />
+<meta name="theme-color" content="#f7f5f1" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="author" content="Jaehwan Lee" />
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Notion Cover Studio" />
+<meta property="og:title" content="Notion Cover Studio — Free minimal Notion covers &amp; wallpapers" />
+<meta property="og:description" content="A cover for your Notion page or a wallpaper for your phone. Type a line, pick a preset, download a 1500×600 or 1080×1920 PNG. Free, no sign-up." />
+<meta property="og:url" content="https://notion-cover-studio.vercel.app/" />
+<meta property="og:image" content="https://notion-cover-studio.vercel.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="A warm blush gradient with the words Ideas worth keeping." />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Notion Cover Studio — Free minimal Notion covers &amp; wallpapers" />
+<meta name="twitter:description" content="Type a line, pick a preset, download a sharp PNG. 1500×600 Notion covers and 1080×1920 wallpapers, free." />
+<meta name="twitter:image" content="https://notion-cover-studio.vercel.app/og-image.png" />
+
+<!-- AdSense: after approval, uncomment the meta tag below, paste your ca-pub id,
+     then add the AdSense script once before </head> and fill the two ad units
+     (data-ad-client / data-ad-slot) further down. -->
+<!-- <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX" /> -->
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Notion Cover Studio",
+  "alternateName": "Minimal Notion Cover & Wallpaper Studio",
+  "url": "https://notion-cover-studio.vercel.app/",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires JavaScript",
+  "description": "A free browser tool that generates minimal Notion cover images (1500×600) and phone wallpapers (1080×1920) as sharp PNG downloads.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": [
+    "16 minimal presets: gradients, paper textures, grid and dot grids",
+    "Custom text, font, alignment and colour",
+    "1500×600 Notion cover export",
+    "1080×1920 phone wallpaper export",
+    "High-resolution PNG download rendered in the browser",
+    "No sign-up, no watermark, no upload"
+  ],
+  "author": { "@type": "Person", "name": "Jaehwan Lee" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Notion Cover Studio really free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every preset, font and export is free with no account, no watermark and no limit on how many images you download. The site is supported by ads and by an optional paid wallpaper pack." }
+    },
+    {
+      "@type": "Question",
+      "name": "What size should a Notion cover be?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Notion recommends 1500×600 pixels for a page cover. This tool exports exactly that. Notion crops the top and bottom of a cover on narrow screens, so keep important text near the centre." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do my images or text get uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The image is drawn in your own browser with the Canvas API. Nothing you type or download is sent to a server." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use the images commercially?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Images you generate here are yours to use in personal or commercial projects, including client Notion workspaces and social posts. You do not need to credit the tool." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change the text after downloading?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A PNG is a flat image, so come back to the tool, adjust the text and download a new file. Nothing is stored, so re-creating takes a few seconds." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my text cut off on mobile?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Notion shows a cover at a different crop on phones and in the Notion app. Keep text inside the middle horizontal band and it will survive every view." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Notion Cover Studio home">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-name">Notion Cover Studio</span>
+  </a>
+  <nav class="site-nav" aria-label="Sections">
+    <a href="#studio">Studio</a>
+    <a href="#how">How it works</a>
+    <a href="#faq">FAQ</a>
+    <span class="pill">Free</span>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>A cover for your Notion page<br class="br-wide" /> in about ten seconds.</h1>
+    <p class="hero-sub">Pick a preset, type a line, download a sharp PNG. No account, no watermark, no upload — the image is drawn in your browser.</p>
+    <ul class="hero-meta">
+      <li>1500 × 600 Notion covers</li>
+      <li>1080 × 1920 phone wallpapers</li>
+      <li>16 minimal presets</li>
+    </ul>
+  </section>
+
+  <section id="studio" class="studio" aria-label="Cover studio">
+    <div class="stage">
+      <div class="stage-frame">
+        <canvas id="canvas" width="1500" height="600" aria-label="Preview of your cover"></canvas>
+      </div>
+      <div class="stage-bar">
+        <div class="segmented" role="tablist" aria-label="Format">
+          <button type="button" role="tab" aria-selected="true" data-format="cover">Notion cover <span>1500×600</span></button>
+          <button type="button" role="tab" aria-selected="false" data-format="wallpaper">Phone wallpaper <span>1080×1920</span></button>
+        </div>
+        <div class="stage-actions">
+          <button type="button" class="btn btn-ghost" id="shuffle" title="Surprise me (R)">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 7h3.5l9 10H20M17.5 7H20M4 17h3.5l2.2-2.4M14.8 9.2 17.5 7M18 4.5 20.5 7 18 9.5M18 19.5 20.5 17 18 14.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Shuffle
+          </button>
+          <button type="button" class="btn btn-dark" id="download">
+            Download PNG
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <p class="stage-note">Rendered at full resolution. Notion crops covers on phones, so keep text near the middle.</p>
+    </div>
+
+    <aside class="panel" aria-label="Settings">
+      <div class="panel-block">
+        <div class="panel-head">
+          <h2>Preset</h2>
+          <span class="count" id="preset-count"></span>
+        </div>
+        <div class="presets" id="presets" role="radiogroup" aria-label="Preset"></div>
+      </div>
+
+      <div class="panel-block">
+        <div class="panel-head"><h2>Text</h2></div>
+        <label class="field">
+          <span>Headline</span>
+          <textarea id="headline" rows="2" maxlength="80" placeholder="Ideas worth keeping">Ideas worth keeping</textarea>
+        </label>
+        <label class="field">
+          <span>Subtitle <em>optional</em></span>
+          <input id="subtitle" type="text" maxlength="60" placeholder="weekly notes" />
+        </label>
+        <div class="field-row">
+          <label class="field">
+            <span>Font</span>
+            <select id="font">
+              <option value="Inter">Inter — clean sans</option>
+              <option value="Playfair Display">Playfair — editorial serif</option>
+              <option value="Lora">Lora — bookish serif</option>
+              <option value="Space Mono">Space Mono — technical</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Align</span>
+            <select id="align">
+              <option value="center">Centre</option>
+              <option value="left">Left</option>
+              <option value="right">Right</option>
+            </select>
+          </label>
+        </div>
+        <div class="field-row">
+          <label class="field">
+            <span>Size <output id="size-out">100</output></span>
+            <input id="size" type="range" min="48" max="200" step="2" value="100" />
+          </label>
+          <label class="field field-color">
+            <span>Colour</span>
+            <span class="color-wrap">
+              <input id="ink" type="color" value="#241c1a" />
+              <output id="ink-out">#241C1A</output>
+            </span>
+          </label>
+        </div>
+        <button type="button" class="link-btn" id="reset">Reset everything</button>
+      </div>
+
+      <div class="panel-block promo">
+        <p class="promo-kicker">From the same desk</p>
+        <p class="promo-title">Want 10+ handcrafted Cozy Minimal wallpapers? Get 40% OFF</p>
+        <p class="promo-price"><s>$4.99</s> <strong>$2.99</strong> with code LAUNCH40</p>
+        <a class="btn btn-outline btn-block" href="https://jaehwan0.gumroad.com/l/cozy-minimal-wallpaper-pack/LAUNCH40" target="_blank" rel="noopener">See the pack on Gumroad</a>
+      </div>
+    </aside>
+  </section>
+
+  <!-- AdSense display unit — replace data-ad-client / data-ad-slot after approval -->
+  <div class="ad-slot" aria-hidden="true">
+    <span>Advertisement</span>
+    <!--
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </div>
+
+  <section id="how" class="section">
+    <h2 class="section-title">How it works</h2>
+    <ol class="steps">
+      <li>
+        <span class="step-n">01</span>
+        <h3>Choose a format</h3>
+        <p>1500 × 600 for a Notion page cover, 1080 × 1920 for a phone wallpaper. Both export at full resolution.</p>
+      </li>
+      <li>
+        <span class="step-n">02</span>
+        <h3>Pick a preset and type a line</h3>
+        <p>Sixteen quiet gradients, paper textures and grids. Then add your own headline, font and ink colour.</p>
+      </li>
+      <li>
+        <span class="step-n">03</span>
+        <h3>Download the PNG</h3>
+        <p>One click saves a flattened, watermark-free PNG. Drag it into Notion, or set it as your lock screen.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="band">
+    <div class="band-text">
+      <p class="band-kicker">If you want these without the fiddling</p>
+      <h2>Ten finished wallpapers, made by hand.</h2>
+      <p>A pack of ten quiet, minimal wallpapers built for desktop, phone and Notion covers. One file, no app, works forever.</p>
+    </div>
+    <div class="band-cta">
+      <p class="band-price"><s>$4.99</s> <strong>$2.99</strong></p>
+      <a class="btn btn-light" href="https://jaehwan0.gumroad.com/l/cozy-minimal-wallpaper-pack/LAUNCH40" target="_blank" rel="noopener">Get 40% off with LAUNCH40</a>
+      <p class="band-fine">Instant download on Gumroad · 8.7 MB · PNG</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Made for the way Notion actually looks</h2>
+    <div class="notes">
+      <div class="note">
+        <h3>5:2, always</h3>
+        <p>Notion displays covers at a 5:2 ratio and crops the edges depending on the window. Every cover here is exported at 1500 × 600 with the text inside the safe band.</p>
+      </div>
+      <div class="note">
+        <h3>Sharp on retina</h3>
+        <p>The preview is scaled down in CSS; the file you download is drawn at pixel size. No blur, no upscaling, no compression artefacts around letters.</p>
+      </div>
+      <div class="note">
+        <h3>Nothing leaves your browser</h3>
+        <p>No upload, no queue, no account. The canvas runs locally, which is also why downloads are instant.</p>
+      </div>
+      <div class="note">
+        <h3>Free for client work</h3>
+        <p>Use the output in a client workspace, a template you sell, or a social post. No credit line required, no licence to buy.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <h2 class="section-title">Questions</h2>
+    <div class="faq">
+      <details open>
+        <summary>Is it really free?</summary>
+        <p>Yes. Every preset, font and export is free, with no account, no watermark and no download limit. The site is paid for by the ads you see and by an optional wallpaper pack.</p>
+      </details>
+      <details>
+        <summary>What size should a Notion cover be?</summary>
+        <p>Notion recommends 1500 × 600 pixels, which is exactly what this tool exports. Phones and the Notion app show a narrower crop, so keep text near the centre.</p>
+      </details>
+      <details>
+        <summary>Do my images or text get uploaded anywhere?</summary>
+        <p>No. The PNG is drawn in your browser with the Canvas API. Nothing you type is sent to a server.</p>
+      </details>
+      <details>
+        <summary>Can I use the images commercially?</summary>
+        <p>Yes. Whatever you generate here is yours, including in client workspaces and paid templates. No credit needed.</p>
+      </details>
+      <details>
+        <summary>Can I edit the text later?</summary>
+        <p>A PNG is flat, so re-open the tool and make a new one. Your last settings are remembered in your browser, so it takes a few seconds.</p>
+      </details>
+      <details>
+        <summary>Which fonts are included?</summary>
+        <p>Inter, Playfair Display, Lora and Space Mono — all open-licensed and loaded from Google Fonts. Add more by editing the font list in <code>app.js</code>.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div>
+    <span class="brand-mark small" aria-hidden="true"></span>
+    <p><strong>Notion Cover Studio</strong><br />A free tool by Jaehwan Lee.</p>
+  </div>
+  <div class="footer-links">
+    <a href="#studio">Studio</a>
+    <a href="#how">How it works</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://jaehwan0.gumroad.com/l/cozy-minimal-wallpaper-pack/LAUNCH40" target="_blank" rel="noopener">Wallpaper pack</a>
+  </div>
+  <p class="footer-fine">Not affiliated with Notion Labs, Inc. “Notion” is a trademark of its owner. Free to use, provided as is.</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>
