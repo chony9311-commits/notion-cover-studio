@@ -504,5 +504,5 @@
   }
 
   /* expose a tiny hook for printing a specific render in testing */
-  window.__coverStudio = { state: state, render: render, presets: PRESETS, setState: function (patch) { Object.assign(state, patch); syncInputs(); markPreset(); render(); } };
+  window.__coverStudio = { state: state, render: render, presets: PRESETS, setState: function (patch) { Object.assign(state, patch); syncInputs(); markPreset(); save(); render(); } };
 })();

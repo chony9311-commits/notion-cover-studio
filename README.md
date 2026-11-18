@@ -50,7 +50,7 @@ vercel --prod
 ## After the first deploy
 
 - **Swap the domain** if it is not `notion-cover-studio.vercel.app`: search `notion-cover-studio.vercel.app` in `index.html` (canonical, OG, Twitter, JSON-LD), `robots.txt` and `sitemap.xml`.
-- **Google AdSense**: add the site in AdSense, paste the verification snippet into `<head>` (the meta tag is already stubbed in `index.html`), then fill `data-ad-client` / `data-ad-slot` in the display unit and remove the surrounding comment. There is one responsive slot under the studio. Approval needs the live URL and some traffic — the FAQ and explanatory copy exist partly for that.
+- **Google AdSense**: add the site in AdSense, paste the verification snippet into `<head>` (the meta tag is already stubbed in `index.html`), then fill `data-ad-client` / `data-ad-slot` in the display unit under the studio and remove its `hidden` attribute. AdSense also asks for an `ads.txt` at the domain root once approved — it must contain your own `pub-` line, so add it then (a placeholder file would be worse than none). Approval needs the live URL and some traffic; the FAQ and explanatory copy exist partly for that.
 - **Search Console**: submit `sitemap.xml`, then request indexing for `/`.
 - **Analytics**: none is included on purpose (no cookies, no consent banner needed). Add Vercel Analytics or Plausible if wanted.
 
