@@ -59,7 +59,7 @@ button{font:inherit;color:inherit}
   font-family:"Playfair Display",Georgia,serif;
   font-size:clamp(32px,5.2vw,58px);
   line-height:1.08;letter-spacing:-.03em;font-weight:400;
-  max-width:19ch;
+  max-width:27ch;
 }
 .hero-sub{margin-top:20px;max-width:56ch;color:var(--muted);font-size:clamp(15px,1.6vw,17px)}
 .hero-meta{
@@ -237,9 +237,9 @@ input[type=color]::-moz-color-swatch{border:0;border-radius:5px}
   padding:clamp(28px,4.4vw,56px);
   display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(24px,4vw,48px);
   align-items:center;
-  max-width:1240px;
+  max-width:1080px;
 }
-@media (min-width:1280px){.band{margin-left:auto;margin-right:auto}}
+@media (min-width:1140px){.band{margin-left:auto;margin-right:auto}}
 .band-kicker{font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:#a8a29a;margin-bottom:10px}
 .band h2{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:clamp(23px,3.2vw,34px);letter-spacing:-.02em;margin-bottom:12px}
 .band-text p:last-child{color:#c8c2b9;font-size:14.5px;max-width:46ch}
@@ -299,6 +299,9 @@ input[type=color]::-moz-color-swatch{border:0;border-radius:5px}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
 /* responsive */
+@media (min-width:1081px){
+  .stage{position:sticky;top:84px}
+}
 @media (max-width:1080px){
   .studio{grid-template-columns:1fr}
   .panel{order:2}

@@ -105,8 +105,8 @@
     var key = w + 'x' + h;
     if (grainCache[key]) { return grainCache[key]; }
     var c = document.createElement('canvas');
-    c.width = Math.max(1, Math.round(w / 2));
-    c.height = Math.max(1, Math.round(h / 2));
+    c.width = Math.max(1, Math.round(w / 3));
+    c.height = Math.max(1, Math.round(h / 3));
     var g = c.getContext('2d');
     var img = g.createImageData(c.width, c.height);
     var rnd = mulberry32(w * 7 + h * 13);
@@ -114,7 +114,7 @@
       var v = rnd();
       var shade = v > 0.5 ? 255 : 0;
       img.data[i] = img.data[i + 1] = img.data[i + 2] = shade;
-      img.data[i + 3] = Math.round(rnd() * (v > 0.5 ? 26 : 34));
+      img.data[i + 3] = Math.round(rnd() * (v > 0.5 ? 16 : 22));
     }
     g.putImageData(img, 0, 0);
     grainCache[key] = c;
