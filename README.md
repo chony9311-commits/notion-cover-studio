@@ -58,6 +58,7 @@ vercel --prod
 
 - Presets live in the `PRESETS` array at the top of `app.js`: `colors`, `angle`, `ink`, and `kind` (`gradient`, `paper`, `grid`, `dots`, `rings`).
 - Fonts: add a family to the Google Fonts `<link>` in `index.html` and to `FONTS` in `app.js`.
+- `index.html` links `styles.css?v=20261118` and `app.js?v=20261118`; bump that number when you change those files so returning visitors do not get a cached copy.
 - The Gumroad call to action appears three times in `index.html` (sidebar card, dark band, footer link). Current link: `https://jaehwan0.gumroad.com/l/cozy-minimal-wallpaper-pack/LAUNCH40` (40% off, $4.99 → $2.99).
 
 ## Notes
